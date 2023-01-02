@@ -2,7 +2,7 @@
   "name": "last-fortress",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Kathryn-Luo/last-fortress-count",
+  "homepage": "https://kathryn-luo.github.io/last-fortress-count/",
   "dependencies": {
     "@tanstack/react-query": "^4.20.4",
     "@testing-library/jest-dom": "^5.16.5",
