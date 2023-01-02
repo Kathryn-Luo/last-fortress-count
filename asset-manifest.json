@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Kathryn-Luo/last-fortress-count/static/css/main.8cae9bcc.css",
+    "main.js": "/Kathryn-Luo/last-fortress-count/static/js/main.ddc03e14.js",
+    "static/js/787.ebf05c4b.chunk.js": "/Kathryn-Luo/last-fortress-count/static/js/787.ebf05c4b.chunk.js",
+    "index.html": "/Kathryn-Luo/last-fortress-count/index.html",
+    "main.8cae9bcc.css.map": "/Kathryn-Luo/last-fortress-count/static/css/main.8cae9bcc.css.map",
+    "main.ddc03e14.js.map": "/Kathryn-Luo/last-fortress-count/static/js/main.ddc03e14.js.map",
+    "787.ebf05c4b.chunk.js.map": "/Kathryn-Luo/last-fortress-count/static/js/787.ebf05c4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cae9bcc.css",
+    "static/js/main.ddc03e14.js"
+  ]
+}
