@@ -4,6 +4,11 @@ import { Controller, FormProvider, useForm, useFormContext } from 'react-hook-fo
 import { Radio, Button } from 'antd';
 import { useState } from 'react';
 import { recoverSecondOptions, chanceOptions, durabilityPreTimeOptions, carNumberOptions } from './settings'
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 interface formType {
   recoverSeconds: number,
@@ -22,8 +27,11 @@ function App() {
   const [result, setResult] = useState<any>(null)
   const methods = useForm<formType>({ defaultValues: defaultValue })
   const { handleSubmit, reset } = methods
-  const endTime = '2023-01-06 09:00'
-  // const endTime = '2023-01-04 09:00'
+  // 台北時間 01/06 09:00 換算至使用者時區時間
+  const endTimeAtTaipei = '2023/01/06 09:00'
+  const dayjsTaipei = dayjs(endTimeAtTaipei).tz("Asia/Taipei")
+  const dayjsTimeZone = dayjs.tz.guess()
+  const endTime = dayjsTaipei.tz(dayjsTimeZone).format('YYYY/MM/DD HH:mm:ss')
 
   const onSubmit = (data:any) => {
     setResult({...data})
