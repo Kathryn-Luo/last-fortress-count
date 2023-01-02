@@ -61,7 +61,7 @@ function App() {
         <br />
         {result && <Result endTime={endTime} result={result} />}
       </div>
-      <p>version: 0.0.1</p>
+      <p className='text-center text-slate-700'>version: 0.0.2</p>
     </div>
   );
 }
@@ -121,11 +121,9 @@ function Result ({
     recoverChances,
     recoverPreTimes,
   } = result
-  console.log(result)
   const remainingSeconds = Math.floor((Date.parse(endTime) - Date.now()) / 1000); // 剩餘秒數
   const remainingDays = Math.floor((remainingSeconds + 60 * 60 ) / 24 / 60 / 60) // 剩餘天數
   const remainingMz = remainingDays * 5
-  console.log(remainingSeconds, recoverSeconds)
   const recoverPreCar = Math.floor(remainingSeconds / recoverSeconds) // 每一車可恢復耐久值
   const recoverDurability = recoverPreCar * carNumber + remainingDays * recoverChances * recoverPreTimes // 總共恢復耐久值
   const books = Math.floor((recoverDurability - remainingMz * 20) / 5) * 10 + remainingMz * 100
@@ -139,6 +137,8 @@ function Result ({
 
   return (
     <div className='bg-slate-200/[.42] rounded-lg p-5 [&>p]:m-0'>
+      <p className='font-bold text-yellow-300'>！！不計算當日變異喪屍、卡車維修次數，僅列入當日恢復體力！！</p>
+      <br />
       <p>活動剩餘時間：{days}天 {hours}時 {minutes}分 {seconds}秒</p>
       <p>每車可恢復體力：{recoverPreCar}</p>
       <p>總共可獲得情報手冊：{books}本</p>
