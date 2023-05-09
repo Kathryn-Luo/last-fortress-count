@@ -167,6 +167,10 @@ function Result ({
       <p>每天使用 5 板手 * {carNumber} 卡車</p>
       <p>每車可恢復體力：{recoverPreCar + onceWrenchRecover}</p>
       <p>總共可獲得情報手冊：{books + onceWrenchRecover / 5 * 10}本</p>
+      <br />
+      <p>每天使用 10 板手 * {carNumber} 卡車</p>
+      <p>每車可恢復體力：{recoverPreCar + onceWrenchRecover * 2}</p>
+      <p>總共可獲得情報手冊：{books + onceWrenchRecover / 5 * 10 * 2}本</p>
       
     </div>
   )
