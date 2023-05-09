@@ -27,8 +27,8 @@ function App() {
   const [result, setResult] = useState<any>(null)
   const methods = useForm<formType>({ defaultValues: defaultValue })
   const { handleSubmit, reset } = methods
-  // 台北時間 03/28 09:00 換算至使用者時區時間
-  const endTimeAtTaipei = '2023/03/28 09:00'
+  // 台北時間 05/12 09:00 換算至使用者時區時間
+  const endTimeAtTaipei = '2023/05/12 09:00'
   const dayjsTaipei = dayjs(endTimeAtTaipei).tz("Asia/Taipei")
   const dayjsTimeZone = dayjs.tz.guess()
   const endTime = dayjsTaipei.tz(dayjsTimeZone).format('YYYY/MM/DD HH:mm:ss')
