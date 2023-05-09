@@ -23,7 +23,7 @@ function Timer ({
     const interval = setInterval(() => getTime(deadline), 1000);
 
     return () => clearInterval(interval);
-  }, [])
+  }, [deadline])
   return (
     <span className='Timer'>
       {days}天 {hours < 10 ? `0${hours}` : hours}時 {minutes < 10 ? `0${minutes}` : minutes}分 {seconds < 10 ? `0${seconds}` : seconds}秒

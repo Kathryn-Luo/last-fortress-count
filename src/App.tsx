@@ -1,7 +1,7 @@
 import './App.css';
 import Timer from './components/timer';
 import { Controller, FormProvider, useForm, useFormContext } from 'react-hook-form';
-import { Radio, Button } from 'antd';
+import { Radio, Button, DatePicker, DatePickerProps } from 'antd';
 import { useState } from 'react';
 import { recoverSecondOptions, chanceOptions, durabilityPreTimeOptions, carNumberOptions } from './settings'
 import dayjs from 'dayjs';
@@ -31,7 +31,7 @@ function App() {
   const endTimeAtTaipei = '2023/05/12 09:00'
   const dayjsTaipei = dayjs(endTimeAtTaipei).tz("Asia/Taipei")
   const dayjsTimeZone = dayjs.tz.guess()
-  const endTime = dayjsTaipei.tz(dayjsTimeZone).format('YYYY/MM/DD HH:mm:ss')
+  const [endTime, setEndTime] = useState<string>(dayjsTaipei.tz(dayjsTimeZone).format('YYYY/MM/DD HH:mm:ss'))
 
   const onSubmit = (data:any) => {
     setResult({...data})
@@ -41,13 +41,34 @@ function App() {
     reset()
   }
 
+  const dateFormat = 'YYYY/MM/DD HH:mm:ss';
+  const onDateOk = (
+    value: DatePickerProps['value']
+  ) => {
+    setEndTime(dayjs(value).format('YYYY/MM/DD HH:mm:ss'))
+  }
+
   return (
     <div className="App min-h-screen w-full bg-slate-800">
       <div className="max-w-lg mx-auto p-4 text-slate-50">
-        <p className='text-yellow-300 text-center'>活動剩餘時間：<Timer deadline={endTime} /></p>
-        <br />
         <FormProvider {...methods} >
-          <form onSubmit={handleSubmit(onSubmit)} className='table w-full border-spacing-2'>
+          <form onSubmit={handleSubmit(onSubmit)} className='table w-full border-spacing-2 text-left'>
+
+            <div className='table-row text-yellow-300'>
+              <p className='table-cell text-right pr-2'>活動結束時間</p>
+              <DatePicker
+                className='table-cell'
+                showTime
+                defaultValue={dayjs(endTime, dateFormat)}
+                format={dateFormat}
+                onOk={onDateOk} />
+            </div>
+            <div className='table-row text-yellow-300'>
+              <p className='table-cell text-right pr-2 pb-5'>活動剩餘時間</p>
+              <div className='table-cell pb-5'>
+                <Timer deadline={endTime} />
+              </div>
+            </div>
             <TableRow name='recoverSeconds' label='1耐久值恢復時間' options={recoverSecondOptions} />
             <TableRow name='recoverChances' label='免費回體次數' options={chanceOptions} />
             <TableRow name='recoverPreTimes' label='修車廠單次恢復' options={durabilityPreTimeOptions} />
