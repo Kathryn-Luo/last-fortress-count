@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/last-fortress-count/static/css/main.5514b014.css",
-    "main.js": "/last-fortress-count/static/js/main.2b9e6da7.js",
+    "main.css": "/last-fortress-count/static/css/main.d8dae1c2.css",
+    "main.js": "/last-fortress-count/static/js/main.3aba68cb.js",
     "static/js/787.ebf05c4b.chunk.js": "/last-fortress-count/static/js/787.ebf05c4b.chunk.js",
     "index.html": "/last-fortress-count/index.html",
-    "main.5514b014.css.map": "/last-fortress-count/static/css/main.5514b014.css.map",
-    "main.2b9e6da7.js.map": "/last-fortress-count/static/js/main.2b9e6da7.js.map",
+    "main.d8dae1c2.css.map": "/last-fortress-count/static/css/main.d8dae1c2.css.map",
+    "main.3aba68cb.js.map": "/last-fortress-count/static/js/main.3aba68cb.js.map",
     "787.ebf05c4b.chunk.js.map": "/last-fortress-count/static/js/787.ebf05c4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5514b014.css",
-    "static/js/main.2b9e6da7.js"
+    "static/css/main.d8dae1c2.css",
+    "static/js/main.3aba68cb.js"
   ]
 }
